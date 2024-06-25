@@ -6,9 +6,9 @@ do
 	function import(modname)
 		if nils[modname] then return end
 		local cached = cache[modname]
-		if cached ~= nil then return cached end
+		if cached then return cached end
 		cached = _modules[modname]
-		if cached ~= nil then
+		if cached then
 			cached = cached(modname);
 			if cached == nil then
 				nils[modname] = true
